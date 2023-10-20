@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#ffe6c7" />
+    <meta
+      name="description"
+      content="Discover the best dining experiences with Foodies, your go-to restaurant explorer. Streamlining your search for nearby restaurants, Foodies makes finding your next delicious meal effortless. Explore local eateries, read reviews, and savor culinary delights with ease."
+    />
+    <title>Foodies - Explore Restaurant</title>
+    <link rel="icon" href="./favicon.ico" />
+    <link rel="manifest" href="./app.webmanifest" />
+    <link rel="apple-touch-icon" href="/icons/icon-192x192.png" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <!-- Navbar Start -->
+    <header>
+      <nav class="navbar">
+        <a href="#main-content" class="skip-to-content">Skip to Content</a>
+        <div class="navbar-header">
+          <p><span>food</span>ies.</p>
+        </div>
+        <div class="navbar-nav">
+          <div class="extra">
+            <button id="hamburger-menu">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="1em"
+                viewBox="0 0 448 512"
+              >
+                <path
+                  d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"
+                />
+              </svg>
+            </button>
+          </div>
+          <div class="list">
+            <a href="#/home">Home</a>
+            <a href="#/favorite">Favorite</a>
+            <a href="https://github.com/warizmy">About Us</a>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Content Start -->
+
+    <!-- Hero start -->
+    <main id="main-content">
+      <restaurant-content></restaurant-content>
+    </main>
+    <!-- Contact us Start -->
+    <section id="contact-us">
+      <p id="hd-contact-us">Contact<span> Us</span></p>
+      <div class="content">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3945.1197620225585!2d116.08437717595437!3d-8.584482491460252!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dcdc10f89b8df1d%3A0x4ae9795903b0be42!2snamnam.coffee!5e0!3m2!1sid!2sid!4v1692794646048!5m2!1sid!2sid"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          class="map"
+        ></iframe>
+        <form action="">
+          <div class="input-group">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="#fff"
+              stroke="#000"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="feather feather-user"
+            >
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+            <input type="text" placeholder="Name" id="name-user" />
+          </div>
+          <div class="input-group" style="color: #fff">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="#ffff"
+              stroke="#000"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="feather feather-mail"
+            >
+              <path
+                d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+              ></path>
+              <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+            <input type="text" placeholder="E-Mail" id="e-mail" />
+          </div>
+          <div class="input-textarea">
+            <textarea
+              name="pesan"
+              id="mytext"
+              cols="30"
+              rows="10"
+              placeholder="Type your message..."
+            ></textarea>
+          </div>
+          <p id="numberOftextlimit" style="color: #fff"></p>
+          <button type="submit" id="btn">Send Message!</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Footer Start -->
+    <footer>
+      <div class="content">
+        <div class="content-top">
+          <div class="nav">
+            <h2>FEATURED</h2>
+            <a href="#/home">Home</a>
+            <a href="#">Favorite</a>
+            <a href="https://github.com/warizmy">About Us</a>
+          </div>
+          <aside>
+            <div>
+              <h2>US</h2>
+              <h1 id="logo-footer"><span>food</span>ies.</h1>
+              <br />
+              <p>
+                Jl. Tlk. Bayur No.2, Kekalik Jaya, Kec. Sekarbela, <br />
+                Kota Mataram.
+              </p>
+            </div>
+          </aside>
+        </div>
+        <hr />
+        <div class="container">
+          <div class="social">
+            <a href="https://www.instagram.com/abidkhawarizmii/#">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                viewBox="0,0,256,256"
+                fill-rule="nonzero"
+              >
+                <g
+                  fill-rule="nonzero"
+                  stroke="none"
+                  stroke-width="1"
+                  stroke-linecap="butt"
+                  stroke-linejoin="miter"
+                  stroke-miterlimit="10"
+                  stroke-dasharray=""
+                  stroke-dashoffset="0"
+                  font-family="none"
+                  font-weight="none"
+                  font-size="none"
+                  text-anchor="none"
+                  style="mix-blend-mode: normal"
+                >
+                  <g transform="scale(5.12,5.12)">
+                    <path
+                      d="M12,3c-4.96,0 -9,4.04 -9,9v26c0,4.96 4.04,9 9,9h26c4.96,0 9,-4.04 9,-9v-26c0,-4.96 -4.04,-9 -9,-9zM38,8h3c0.55,0 1,0.45 1,1v3c0,0.55 -0.45,1 -1,1h-3c-0.55,0 -1,-0.45 -1,-1v-3c0,-0.55 0.45,-1 1,-1zM25,10c5.33,0 10.01969,2.8 12.67969,7h4.32031v20c0,2.76 -2.24,5 -5,5h-24c-2.76,0 -5,-2.24 -5,-5v-20h4.32031c2.66,-4.2 7.34969,-7 12.67969,-7zM25,12c-7.17,0 -13,5.83 -13,13c0,7.17 5.83,13 13,13c7.17,0 13,-5.83 13,-13c0,-7.17 -5.83,-13 -13,-13zM25,16c4.96,0 9,4.04 9,9c0,4.96 -4.04,9 -9,9c-4.96,0 -9,-4.04 -9,-9c0,-4.96 4.04,-9 9,-9z"
+                    ></path>
+                  </g>
+                </g>
+              </svg>
+            </a>
+            <a href="#">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                x="0px"
+                y="0px"
+                width="100"
+                height="100"
+                viewBox="0 0 50 50"
+              >
+                <path
+                  d="M 50.0625 10.4375 C 48.214844 11.257813 46.234375 11.808594 44.152344 12.058594 C 46.277344 10.785156 47.910156 8.769531 48.675781 6.371094 C 46.691406 7.546875 44.484375 8.402344 42.144531 8.863281 C 40.269531 6.863281 37.597656 5.617188 34.640625 5.617188 C 28.960938 5.617188 24.355469 10.21875 24.355469 15.898438 C 24.355469 16.703125 24.449219 17.488281 24.625 18.242188 C 16.078125 17.8125 8.503906 13.71875 3.429688 7.496094 C 2.542969 9.019531 2.039063 10.785156 2.039063 12.667969 C 2.039063 16.234375 3.851563 19.382813 6.613281 21.230469 C 4.925781 21.175781 3.339844 20.710938 1.953125 19.941406 C 1.953125 19.984375 1.953125 20.027344 1.953125 20.070313 C 1.953125 25.054688 5.5 29.207031 10.199219 30.15625 C 9.339844 30.390625 8.429688 30.515625 7.492188 30.515625 C 6.828125 30.515625 6.183594 30.453125 5.554688 30.328125 C 6.867188 34.410156 10.664063 37.390625 15.160156 37.472656 C 11.644531 40.230469 7.210938 41.871094 2.390625 41.871094 C 1.558594 41.871094 0.742188 41.824219 -0.0585938 41.726563 C 4.488281 44.648438 9.894531 46.347656 15.703125 46.347656 C 34.617188 46.347656 44.960938 30.679688 44.960938 17.09375 C 44.960938 16.648438 44.949219 16.199219 44.933594 15.761719 C 46.941406 14.3125 48.683594 12.5 50.0625 10.4375 Z"
+                ></path>
+              </svg>
+            </a>
+            <a href="#">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                x="0px"
+                y="0px"
+                width="100"
+                height="100"
+                viewBox="0 0 50 50"
+              >
+                <path
+                  d="M41,4H9C6.243,4,4,6.243,4,9v32c0,2.757,2.243,5,5,5h32c2.757,0,5-2.243,5-5V9C46,6.243,43.757,4,41,4z M37.006,22.323 c-0.227,0.021-0.457,0.035-0.69,0.035c-2.623,0-4.928-1.349-6.269-3.388c0,5.349,0,11.435,0,11.537c0,4.709-3.818,8.527-8.527,8.527 s-8.527-3.818-8.527-8.527s3.818-8.527,8.527-8.527c0.178,0,0.352,0.016,0.527,0.027v4.202c-0.175-0.021-0.347-0.053-0.527-0.053 c-2.404,0-4.352,1.948-4.352,4.352s1.948,4.352,4.352,4.352s4.527-1.894,4.527-4.298c0-0.095,0.042-19.594,0.042-19.594h4.016 c0.378,3.591,3.277,6.425,6.901,6.685V22.323z"
+                ></path>
+              </svg>
+            </a>
+          </div>
+          <a href="#" id="tag">&copy;foodies</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+  <div id="loading-circle">
+    <div class="spinner"></div>
+  </div>
+</html>

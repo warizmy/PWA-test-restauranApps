@@ -1,0 +1,68 @@
+@import "navbar.css";
+@import "typography.css";
+@import "hero.css";
+@import "cards.css";
+@import "contactus.css";
+@import "footer.css";
+@import 'responsive.css';
+@import 'detail.css';
+
+:root {
+  --primary: #f4f4f4;
+  --variant-1: #e6b31e;
+  --variant-2: #ffa559;
+  --variant-3: #ffe6c7;
+  --bg-footer: #252a2c;
+}
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+header .skip-to-content {
+  position: absolute;
+  top: -50px;
+  left: 0;
+  background-color: #bf1722;
+  color: white;
+  padding: 8px;
+  z-index: 100;
+}
+
+header .skip-to-content:focus {
+  top: 0;
+}
+
+#loading-circle {
+  display: none; 
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.spinner {
+  border: 4px solid var(--variant-3);
+  border-top: 4px solid var(--variant-1);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

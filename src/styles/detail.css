@@ -1,0 +1,149 @@
+.detail-container {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  align-items: center;
+  justify-content: center;
+  padding: 8rem 3rem 7rem 3rem;
+}
+
+.detail-container h1 {
+  font-weight: 500;
+  font-size: 2.5rem;
+  text-align: center;
+  color: var(--variant-2);
+}
+
+.detail-container h1 span {
+  color: var(--txt);
+}
+
+.details {
+  padding-top: 0.5rem;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  width: 100%;
+}
+
+.details img {
+  width: 100%;
+  max-width: 780px;
+}
+
+.restaurant {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+#name {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+}
+
+#name svg {
+  fill: var(--variant-2);
+}
+
+#loc {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.9rem;
+  color: #80807e;
+}
+
+#loc svg {
+  fill: #80807e;
+}
+
+#desc {
+  text-align: left;
+}
+
+#categ strong {
+  color: #000;
+}
+
+#categ {
+  color: #80807e;
+}
+
+#foodMenu {
+  text-align: justify;
+}
+
+#drinkMenu {
+  text-align: justify;
+}
+
+/* reviews */
+#reviews-container {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+  padding-bottom: 7rem;
+  gap: 4rem;
+  flex-wrap: wrap;
+  padding-top: 1rem;
+}
+
+#rev {
+  font-size: 2.5rem;
+  font-weight: 500;
+  padding-top: 7rem;
+  text-align: center;
+}
+
+.review {
+  width: 100%;
+  max-width: 550px;
+  padding: 2rem 2rem 2rem 2rem;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+#rev-date {
+  color: #80807e;
+  font-size: 0.8rem;
+  text-align: end;
+}
+
+#rev-txt {
+  text-align: left;
+  font-size: 1rem;
+}
+
+#rev-name {
+  text-align: left;
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: #80807e;
+}
+
+/*
+  Like
+*/
+.like {
+  width: 55px;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--variant-2);
+  position: fixed;
+  bottom: 80px;
+  right: 16px;
+  border-radius: 50%;
+  border: 0;
+  font-size: 18px;
+  color: white;
+  cursor: pointer;
+}

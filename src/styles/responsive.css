@@ -1,0 +1,407 @@
+/* Laptop Start*/
+@media (max-width: 1650px) {
+     .container-content .inside-content .item-content {
+       width: 30%;
+     }
+   }
+   
+   @media (max-width: 1380px) {
+     html {
+       font-size: 80%;
+     }
+     .container-content .inside-content .item-content {
+       width: 29%;
+     }
+     .detail-container .details img{
+      width: 50%;
+     }
+   }
+   /* Laptop Ends */
+   
+   /* Tablet Start*/
+   @media (max-width: 1024px) {
+     .container-content .inside-content .item-content {
+       width: 29%;
+     }
+   
+     .container-content .inside-content .item-content img {
+       height: 150px;
+     }
+     .item-content .rating-class {
+      top: 32%;
+     }
+     .details{
+      flex-wrap: wrap;
+     }
+     #reviews-container{
+      flex-wrap: wrap;
+     }
+     
+   }
+   
+   @media (max-width: 920px) {
+     html {
+       font-size: larger;
+     }
+     header .skip-to-content {
+       top: -50px;
+     }
+     .navbar .navbar-header h1 {
+       font-size: 3rem;
+     }
+     header .navbar .navbar-nav .list {
+       right: -100%;
+       top: 7%;
+       position: absolute;
+       background-color: var(--primary);
+       height: 100vh;
+       width: 15rem;
+       display: flex;
+       flex-direction: column;
+       padding: 2rem 0 0 1rem;
+       transition: 0.3s;
+       gap: 2rem;
+       position: fixed;
+     }
+   
+     header .navbar .navbar-nav .list a {
+       font-size: 1.5rem;
+     }
+   
+     header .navbar .navbar-nav .list.active {
+       right: 0%;
+     }
+   
+     header .navbar .navbar-nav .extra button {
+       border: none;
+       background-color: var(--primary);
+       display: inline-block;
+     }
+   
+     main .hero .hero-content #cta {
+       width: 250px;
+       height: 80px;
+       font-size: 1.6rem;
+       border-radius: 20px 20px 20px 20px;
+       text-align: center;
+     }
+     .container-content .inside-content {
+       gap: 7rem;
+     }
+     .container-content .inside-content .item-content {
+       width: 100%;
+     }
+   
+     .container-content .inside-content .item-content img {
+       height: 500px;
+     }
+     .item-content #rating {
+       font-size: 1.2rem;
+     }
+     #contact-us {
+       padding-top: 8rem;
+     }
+     #contact-us .content {
+       flex-wrap: wrap;
+     }
+     .content .map {
+       height: 30rem;
+     }
+     .details{
+      flex-wrap: wrap;
+     }
+     #reviews-container{
+      flex-wrap: wrap;
+     }
+     .detail-container .details img{
+      width: 100%;
+     }
+     .container-content .not-found-container{
+      gap: 1.4rem;
+     }
+     .container-content p{
+      font-size: 1.3rem;
+     }
+     .container-content #goBackBtn{
+      font-size: 0.9rem;
+     }
+   }
+   
+   @media (max-width: 850px) {
+     .navbar .navbar-header h1 {
+       font-size: 2rem;
+     }
+   
+     header .navbar .navbar-nav .list {
+       right: -100%;
+       top: 9%;
+       position: absolute;
+       background-color: var(--primary);
+       height: 100vh;
+       width: 15rem;
+       display: flex;
+       flex-direction: column;
+       padding: 2rem 0 0 1rem;
+       transition: 0.3s;
+       gap: 2rem;
+       position: fixed;
+     }
+     header .navbar .navbar-nav .list a {
+       font-size: 1.5rem;
+       width: 200px;
+       height: 44px;
+     }
+   
+     header .navbar .navbar-nav .list.active {
+       right: 0%;
+     }
+   
+     header .navbar .navbar-nav .extra button {
+       border: none;
+       background-color: var(--primary);
+     }
+   
+     header .navbar .navbar-nav .extra button {
+       display: inline-block;
+       /* width: 35px;
+       height: 35px; */
+       right: 0;
+     }
+     main .hero .hero-content #cta {
+       width: 250px;
+       height: 80px;
+       font-size: 1.6rem;
+       border-radius: 15px 15px 15px 15px;
+     }
+     .container-content .inside-content {
+       gap: 7rem;
+     }
+   
+     .container-content .inside-content .item-content {
+       width: 100%;
+     }
+   
+     .container-content .inside-content .item-content img {
+       height: 450px;
+     }
+     .item-content #desc {
+       max-height: 150px;
+     }
+   
+     #contact-us .content {
+       flex-wrap: wrap;
+     }
+     footer .content .container .social svg {
+       width: 25px;
+       height: 25px;
+     }
+   
+     footer .content .container .social a {
+       width: 60px;
+       height: 44px;
+     }
+     footer .content .container .social {
+       gap: 0.8rem;
+     }
+     .details{
+      flex-wrap: wrap;
+     }
+     #reviews-container{
+      flex-wrap: wrap;
+     }
+     .container-content p{
+      font-size: 1.2rem;
+     }
+   }
+   
+   @media (max-width: 768px) {
+     footer .content-top .nav {
+       margin-right: 8rem;
+     }
+     .container-content p{
+      font-size: 1.1rem;
+     }
+   }
+   
+   @media (max-width: 540px) {
+     html {
+       font-size: 70%;
+     }
+     header .navbar .navbar-nav .list {
+       right: -100%;
+       top: 7%;
+       position: absolute;
+       background-color: var(--primary);
+       height: 100vh;
+       width: 15rem;
+       display: flex;
+       flex-direction: column;
+       padding: 2rem 0 0 1rem;
+       transition: 0.3s;
+       gap: 2rem;
+       position: fixed;
+     }
+   
+     header .navbar .navbar-nav .list a {
+       font-size: 1.3rem;
+     }
+   
+     header .navbar .navbar-nav .list.active {
+       right: 0%;
+     }
+   
+     .navbar .navbar-nav .extra button {
+       display: inline-block;
+       /* width: 25px;
+       height: 25px; */
+       right: 0;
+     }
+   
+     main .hero .hero-content #cta {
+       width: 150px;
+       height: 50px;
+     }
+   
+     .container-content .inside-content {
+       gap: 7rem;
+     }
+   
+     .container-content .inside-content .item-content {
+       width: 100%;
+     }
+   
+     .container-content .inside-content .item-content img {
+       height: 250px;
+     }
+
+     #contact-us .content {
+       flex-wrap: wrap;
+     }
+
+     footer .content-top .nav {
+       margin-right: 15rem;
+     }
+
+     .details{
+      flex-wrap: wrap;
+     }
+     #reviews-container{
+      flex-wrap: wrap;
+     }
+     .container-content p{
+      font-size: 1.5rem;
+     }
+     .container-content #goBackBtn{
+      height: 44px;
+      width: 90px;
+      font-size: 1.2rem;
+     }
+    
+   }
+   /* Tablet Ends */
+   
+   /* Mobile Start*/
+   @media (max-width: 520px) {
+     html {
+       font-size: 65%;
+     }
+   
+     header .navbar {
+       padding: 1.5rem 2rem 1.5rem 2rem;
+       border: none;
+     }
+   
+     header .navbar .navbar-nav .list {
+       right: -100%;
+       top: 100%;
+       position: absolute;
+       background-color: var(--primary);
+       height: 100vh;
+       width: 15rem;
+       display: flex;
+       flex-direction: column;
+       padding: 2rem 0 0 1rem;
+       transition: 0.3s;
+       gap: 2rem;
+     }
+   
+     header .navbar .navbar-nav .list a {
+       font-size: 1.3rem;
+       width: 150px;
+       height: 44px;
+     }
+   
+     header .navbar .navbar-nav .list.active {
+       right: 0%;
+     }
+   
+     .navbar .navbar-nav .extra button {
+       display: inline-block;
+       /* width: 20px;
+       height: 20px; */
+       right: 0;
+     }
+     main .hero .hero-content #cta {
+       width: 150px;
+       height: 50px;
+       border-radius: 10px 10px 10px 10px;
+       font-size: 1.4rem;
+     }
+   
+     .container-content .inside-content {
+       gap: 7rem;
+     }
+     .container-content .inside-content .item-content {
+       width: 100%;
+     }
+   
+     .container-content .inside-content .item-content img {
+       height: 200px;
+     }
+     #contact-us .content {
+       flex-wrap: wrap;
+     }
+     footer .content-top .nav {
+       margin-right: 5rem;
+     }
+     footer .content-top .nav a {
+       width: 120px;
+       height: 44px;
+       margin-bottom: 1rem;
+     }
+     footer .content .container #tag {
+       width: 50px;
+       height: 50px;
+     }
+     .container-content p{
+      font-size: 1.3rem;
+      text-align: center;
+     }
+     .container-content #goBackBtn{
+      height: 44px;
+      width: 90px;
+      font-size: 1.2rem;
+     }
+   }
+   
+   @media (max-width: 380px) {
+     header .navbar .navbar-nav .list {
+       top: 8%;
+     }
+     .content form .btn {
+       font-size: 1.5rem;
+     }
+     footer .content-top .nav {
+       margin-right: 4rem;
+     }
+     header .navbar .navbar-nav .list {
+       top: 100%;
+     }
+     main .hero .hero-content #cta {
+       width: 140px;
+       height: 50px;
+       border-radius: 10px 10px 10px 10px;
+       font-size: 1.4rem;
+     }
+   }
+   /* Mobile Ends */
