@@ -151,6 +151,7 @@
   -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
   font-size: 1rem;
+  color: #515151;
 }
 
 #load-more{

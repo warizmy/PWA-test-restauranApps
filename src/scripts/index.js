@@ -6,8 +6,6 @@ const app = new Main({
   button: document.getElementById('hamburger-menu'),
   navbarList: document.querySelector('.navbar .navbar-nav .list'),
   content: document.querySelector('#main-content'),
-  myText: document.getElementById('mytext'),
-  textLimit: document.getElementById('numberOftextlimit'),
   loadingCircle: document.querySelector('#loading-circle'),
 });
 

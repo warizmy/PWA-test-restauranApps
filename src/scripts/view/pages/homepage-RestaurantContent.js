@@ -1,5 +1,6 @@
 import RestaurantDB from '../../data/restaurant-source';
 import CONFIG from '../../global/config';
+import messageCount from '../../utils/message-count';
 
 class RestaurantContent extends HTMLElement {
   constructor() {
@@ -16,6 +17,11 @@ class RestaurantContent extends HTMLElement {
     try {
       const restaurants = await RestaurantDB.listRestaurant();
       this.processData(restaurants);
+
+      // Initialize messageCount
+      const myText = document.getElementById('mytext');
+      const textLimit = document.getElementById('numberOftextlimit');
+      messageCount.init({ myText, textLimit });
     } catch (error) {
       console.error('Error loading restaurant data:', error);
     }
@@ -165,8 +171,86 @@ class RestaurantContent extends HTMLElement {
     }
 
     sectionContainer.appendChild(insideContent);
+    // -------------- Cards Section Ends --------------
+
+    // -------------- Contact Us Section Start --------------
+    const sectionContactUs = document.createElement('section');
+    sectionContactUs.setAttribute('id', 'contact-us');
+
+    const headerContactUs = document.createElement('p');
+    headerContactUs.setAttribute('id', 'hd-contact-us');
+    headerContactUs.innerHTML = 'Contact<span> Us</span>';
+
+    const contentContactUs = document.createElement('div');
+    contentContactUs.classList.add('content');
+
+    sectionContactUs.appendChild(headerContactUs);
+    sectionContactUs.appendChild(contentContactUs);
+
+    const iframePanel = document.createElement('iframe');
+    iframePanel.setAttribute('src', 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3945.1197620225585!2d116.08437717595437!3d-8.584482491460252!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dcdc10f89b8df1d%3A0x4ae9795903b0be42!2snamnam.coffee!5e0!3m2!1sid!2sid!4v1692794646048!5m2!1sid!2sid');
+    iframePanel.setAttribute('allowfullscreen', ' ');
+    iframePanel.setAttribute('loading', 'lazy');
+    iframePanel.setAttribute('class', 'map');
+    iframePanel.setAttribute('referrerpolicy', 'no-referrer-when-downgrade');
+
+    contentContactUs.appendChild(iframePanel);
+
+    const formPanel = document.createElement('form');
+    formPanel.innerHTML = `<div class="input-group">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="#fff"
+      stroke="#000"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      class="feather feather-user"
+    >
+      <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+      <circle cx="12" cy="7" r="4"></circle>
+    </svg>
+    <input type="text" placeholder="Name" id="name-user" />
+  </div>
+  <div class="input-group" style="color: #fff">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="#ffff"
+      stroke="#000"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      class="feather feather-mail"
+    >
+      <path
+        d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+      ></path>
+      <polyline points="22,6 12,13 2,6"></polyline>
+    </svg>
+    <input type="text" placeholder="E-Mail" id="e-mail" />
+  </div>
+  <div class="input-textarea">
+    <textarea
+      name="pesan"
+      id="mytext"
+      cols="30"
+      rows="10"
+      placeholder="Type your message..."
+    ></textarea>
+  </div>
+  <p id="numberOftextlimit" style="color: #fff"></p>
+  <button type="submit" id="btn">Send Message!</button>`;
+
+    contentContactUs.appendChild(formPanel);
+    this.appendChild(sectionContactUs);
+    // -------------- Contact Us Section ends --------------
   }
-  // -------------- Cards Section Ends --------------
 
   loadMore() {
     const displayedCards = Array.from(

@@ -1,7 +1,6 @@
 import routes from './routes/routes';
 import UrlParser from './routes/url-parser';
 import DrawerInitiator from './utils/drawer-initiator';
-import messageCount from './utils/message-count';
 
 class Main {
   constructor({
@@ -21,10 +20,6 @@ class Main {
     DrawerInitiator.init({
       button: this._button,
       navbarList: this._navbarList,
-    });
-    messageCount.init({
-      myText: this._myText,
-      textLimit: this._textLimit,
     });
   }
 
