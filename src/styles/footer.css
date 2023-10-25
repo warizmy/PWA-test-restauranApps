@@ -1,4 +1,8 @@
 /* Footer starts */
+footer{
+  padding-top: 10rem;
+}
+
 footer .content {
   background-color: var(--bg-footer);
   padding-top: 4rem;
