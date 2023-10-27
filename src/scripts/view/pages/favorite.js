@@ -3,11 +3,6 @@ import CONFIG from '../../global/config';
 import messageCount from '../../utils/message-count';
 
 class Favorite extends HTMLElement {
-  // eslint-disable-next-line no-useless-constructor
-  constructor() {
-    super();
-  }
-
   connectedCallback() {
     this.loadData();
   }

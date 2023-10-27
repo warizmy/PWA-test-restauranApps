@@ -3,12 +3,7 @@ import CONFIG from '../../global/config';
 import UrlParser from '../../routes/url-parser';
 import LikeButtonInitiator from '../../utils/like-button-initiator';
 
-/* eslint-disable no-useless-constructor */
 class DetailRestaurant extends HTMLElement {
-  constructor() {
-    super();
-  }
-
   connectedCallback() {
     this.loadData();
   }
