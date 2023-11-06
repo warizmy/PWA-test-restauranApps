@@ -1,5 +1,4 @@
 dist
 node_modules
 
-testing
-e2e
+package-lock.json
