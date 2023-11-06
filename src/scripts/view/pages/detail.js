@@ -1,4 +1,4 @@
-import FavoriteRestaurantIdb from '../../data/restaurant-Idb';
+import FavoriteRestaurantIdb from '../../data/restaurant-idb';
 import RestaurantDB from '../../data/restaurant-source';
 import CONFIG from '../../global/config';
 import UrlParser from '../../routes/url-parser';
