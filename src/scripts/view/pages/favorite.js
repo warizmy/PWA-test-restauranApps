@@ -1,4 +1,4 @@
-import FavoriteRestaurantIdb from '../../data/restaurant-Idb';
+import FavoriteRestaurantIdb from '../../data/restaurant-idb';
 import CONFIG from '../../global/config';
 
 class Favorite extends HTMLElement {
