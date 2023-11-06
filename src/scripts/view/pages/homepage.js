@@ -1,6 +1,5 @@
 import RestaurantDB from '../../data/restaurant-source';
 import CONFIG from '../../global/config';
-import messageCount from '../../utils/message-count';
 
 class RestaurantContent extends HTMLElement {
   constructor() {
@@ -17,11 +16,6 @@ class RestaurantContent extends HTMLElement {
     try {
       const restaurants = await RestaurantDB.listRestaurant();
       this.processData(restaurants);
-
-      // Initialize messageCount
-      const myText = document.getElementById('mytext');
-      const textLimit = document.getElementById('numberOftextlimit');
-      messageCount.init({ myText, textLimit });
     } catch (error) {
       console.error('Error loading restaurant data:', error);
     }
@@ -39,9 +33,16 @@ class RestaurantContent extends HTMLElement {
     const heroContent = document.createElement('div');
     heroContent.setAttribute('class', 'hero-content');
 
+    const pictureHeader = document.createElement('picture');
+
+    const sourceHeader = document.createElement('source');
+    sourceHeader.media = '(max-width: 600px)';
+    sourceHeader.srcset = './images/hero-image_2-small.jpg';
+
     const imageHeader = document.createElement('img');
-    imageHeader.src = './images/hero-image_2.jpg';
+    imageHeader.src = './images/hero-image_2-large.jpg';
     imageHeader.setAttribute('alt', 'image-hedaer');
+    imageHeader.setAttribute('id', 'hero-image');
 
     const headerText = document.createElement('p');
     headerText.innerHTML = '<span>food</span>ies';
@@ -68,18 +69,13 @@ class RestaurantContent extends HTMLElement {
     </svg>
     Explore Now`;
 
-    // cta interactive
-    buttonCta.addEventListener('click', () => {
-      const insideContent = document.querySelector('.container-content');
-      if (insideContent) {
-        insideContent.scrollIntoView({ behavior: 'smooth' });
-      }
-    });
+    pictureHeader.appendChild(sourceHeader);
+    pictureHeader.appendChild(imageHeader);
 
     heroContent.appendChild(headerText);
     heroContent.appendChild(headerText2);
     heroContent.appendChild(buttonCta);
-    sectionHero.appendChild(imageHeader);
+    sectionHero.appendChild(pictureHeader);
     sectionHero.appendChild(heroContent);
 
     this.appendChild(sectionHero);
@@ -113,12 +109,15 @@ class RestaurantContent extends HTMLElement {
     restaurants.forEach((restaurant, index) => {
       const image = `${CONFIG.IMAGE_URL}${restaurant.pictureId}`;
 
-      const itemContent = document.createElement('div');
+      const itemContent = document.createElement('a');
       itemContent.classList.add('item-content');
+      itemContent.setAttribute('href', `#/detail/${restaurant.id}`);
 
       const img = document.createElement('img');
       img.src = image;
       img.setAttribute('alt', 'item-image');
+      img.setAttribute('data-src', image);
+      img.classList.add('lazyload');
 
       const itemDescription = document.createElement('div');
       itemDescription.classList.add('item-description');
@@ -134,9 +133,6 @@ class RestaurantContent extends HTMLElement {
       rating.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"/></svg>
       <span>${restaurant.rating}</span>`;
       rating.setAttribute('id', 'rate');
-
-      const line = document.createElement('hr');
-      line.setAttribute('id', 'line-tag');
 
       const restName = document.createElement('a');
       restName.innerHTML = `-${restaurant.name}`;
@@ -161,7 +157,6 @@ class RestaurantContent extends HTMLElement {
       if (index >= this.cardsPerPage) {
         itemContent.style.display = 'none';
       }
-
       insideContent.appendChild(itemContent);
     });
 
@@ -190,7 +185,7 @@ class RestaurantContent extends HTMLElement {
     const iframePanel = document.createElement('iframe');
     iframePanel.setAttribute('src', 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3945.1197620225585!2d116.08437717595437!3d-8.584482491460252!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dcdc10f89b8df1d%3A0x4ae9795903b0be42!2snamnam.coffee!5e0!3m2!1sid!2sid!4v1692794646048!5m2!1sid!2sid');
     iframePanel.setAttribute('allowfullscreen', ' ');
-    iframePanel.setAttribute('loading', 'lazy');
+    iframePanel.classList.add('lazyload');
     iframePanel.setAttribute('class', 'map');
     iframePanel.setAttribute('referrerpolicy', 'no-referrer-when-downgrade');
 
@@ -250,6 +245,18 @@ class RestaurantContent extends HTMLElement {
     contentContactUs.appendChild(formPanel);
     this.appendChild(sectionContactUs);
     // -------------- Contact Us Section ends --------------
+
+    const inputText = document.querySelector('.input-textarea');
+
+    inputText.addEventListener('click', async () => {
+      const additionalFunctionality = await import('../additionalFunctionality');
+      additionalFunctionality.initMessageCount();
+    });
+
+    buttonCta.addEventListener('click', async () => {
+      const additionalFunctionality = await import('../additionalFunctionality');
+      additionalFunctionality.buttonInteractive();
+    });
   }
 
   loadMore() {

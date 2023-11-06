@@ -1,3 +1,4 @@
+import FavoriteRestaurantIdb from '../../data/restaurant-Idb';
 import RestaurantDB from '../../data/restaurant-source';
 import CONFIG from '../../global/config';
 import UrlParser from '../../routes/url-parser';
@@ -71,6 +72,7 @@ class DetailRestaurant extends HTMLElement {
      `;
     LikeButtonInitiator.init({
       likeButtonContainer: document.querySelector('#likeButtonContainer'),
+      favoriteRestaurant: FavoriteRestaurantIdb,
       restaurant: {
         id: restaurant.id,
         name: restaurant.name,

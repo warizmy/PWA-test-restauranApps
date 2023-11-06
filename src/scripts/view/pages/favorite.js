@@ -1,6 +1,5 @@
-import FavoriteRestaurantIdb from '../../data/restaurant-idb';
+import FavoriteRestaurantIdb from '../../data/restaurant-Idb';
 import CONFIG from '../../global/config';
-import messageCount from '../../utils/message-count';
 
 class Favorite extends HTMLElement {
   connectedCallback() {
@@ -11,10 +10,6 @@ class Favorite extends HTMLElement {
     try {
       const restaurant = await FavoriteRestaurantIdb.getAllRestaurant();
       this.processData(restaurant);
-
-      const myText = document.getElementById('mytext');
-      const textLimit = document.getElementById('numberOftextlimit');
-      messageCount.init({ myText, textLimit });
     } catch (error) {
       console.error('Error loading restaurant data:', error);
     }
@@ -30,13 +25,23 @@ class Favorite extends HTMLElement {
     const sectionConHeader = document.createElement('h1');
     sectionConHeader.innerHTML = 'Your <span>Favorite</span> Restaurant';
 
+    const pictureHeader = document.createElement('picture');
+
+    const sourceHeader = document.createElement('source');
+    sourceHeader.media = '(max-width: 600px)';
+    sourceHeader.srcset = './images/not-found-small.jpg';
+
     const notFoundImg = document.createElement('img');
-    notFoundImg.src = './images/not-found.jpg';
+    notFoundImg.src = './images/not-found-large-variant-1.jpg';
     notFoundImg.setAttribute('id', 'not-found-img');
     notFoundImg.setAttribute('alt', 'not-found-img');
 
+    pictureHeader.appendChild(sourceHeader);
+    pictureHeader.appendChild(notFoundImg);
+
     const sectionNotFound = document.createElement('div');
     sectionNotFound.classList.add('not-found-container');
+    sectionNotFound.style.paddingTop = '5rem';
 
     const descNotFound = document.createElement('p');
     descNotFound.innerHTML = 'It looks like you dont have any favorite restaurant!';
@@ -140,7 +145,7 @@ class Favorite extends HTMLElement {
       sectionConHeader.textContent = 'Oops!';
       sectionConHeader.style.fontWeight = 600;
       line.remove();
-      sectionContainer.appendChild(notFoundImg);
+      sectionContainer.appendChild(pictureHeader);
       sectionContainer.appendChild(sectionNotFound);
       sectionNotFound.appendChild(descNotFound);
       sectionNotFound.appendChild(goBackBtn);
@@ -149,12 +154,15 @@ class Favorite extends HTMLElement {
       restaurants.forEach((restaurant) => {
         const image = `${CONFIG.IMAGE_URL}${restaurant.pictureId}`;
 
-        const itemContent = document.createElement('div');
+        const itemContent = document.createElement('a');
         itemContent.classList.add('item-content');
+        itemContent.setAttribute('href', `#/detail/${restaurant.id}`);
 
         const img = document.createElement('img');
         img.src = image;
         img.setAttribute('alt', 'item-image');
+        img.setAttribute('data-src', image);
+        img.classList.add('lazyload');
 
         const itemDescription = document.createElement('div');
         itemDescription.classList.add('item-description');
@@ -171,9 +179,6 @@ class Favorite extends HTMLElement {
         <span>${restaurant.rating}</span>`;
         rating.setAttribute('id', 'rate');
 
-        const line = document.createElement('hr');
-        line.setAttribute('id', 'line-tag');
-
         const restName = document.createElement('a');
         restName.innerHTML = `-${restaurant.name}`;
         restName.setAttribute('id', 'rest-name');
@@ -186,7 +191,6 @@ class Favorite extends HTMLElement {
         ratingRes.appendChild(rating);
         itemDescription.appendChild(loc);
         itemDescription.appendChild(ratingRes);
-        itemDescription.appendChild(line);
         itemDescription.appendChild(restName);
         itemDescription.appendChild(desc);
 
@@ -198,6 +202,13 @@ class Favorite extends HTMLElement {
     }
 
     sectionContainer.appendChild(insideContent);
+
+    const inputText = document.querySelector('.input-textarea');
+
+    inputText.addEventListener('click', async () => {
+      const additionalFunctionality = await import('../additionalFunctionality');
+      additionalFunctionality.initMessageCount();
+    });
   }
 }
 

@@ -1,3 +1,4 @@
+import 'lazysizes';
 import '../styles/main.css';
 import Main from './app';
 import swRegister from './utils/sw-register';

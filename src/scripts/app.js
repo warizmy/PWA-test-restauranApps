@@ -4,14 +4,12 @@ import DrawerInitiator from './utils/drawer-initiator';
 
 class Main {
   constructor({
-    button, navbarList, content, myText, textLimit, loadingCircle,
+    button, navbarList, content, loadingCircle,
   }) {
     this._button = button;
     this._navbarList = navbarList;
     this._content = content;
-    this._myText = myText;
     this._loading = loadingCircle;
-    this._textLimit = textLimit;
 
     this.InitialAppShell();
   }
