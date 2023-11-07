@@ -5,11 +5,10 @@
   "main": "index.js",
   "scripts": {
     "start-dev": "webpack-dev-server --config webpack.dev.js",
-    "build": "webpack --config webpack.prod.js",
+    "build": "webpack --config webpack.prod.js && node sharp.js  ",
     "test": "jest",
     "serve": "http-server dist --port 5000",
     "e2e": "codeceptjs run --steps",
-    "build-image": "node sharp.js",
     "bundle-analyze": "webpack --config webpack.common.js"
   },
   "keywords": [],
